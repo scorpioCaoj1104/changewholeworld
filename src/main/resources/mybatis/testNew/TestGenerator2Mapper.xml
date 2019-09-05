@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.caoj.stuspringbootdemo.dao.TestGenerator2Mapper" >
+  <resultMap id="BaseResultMap" type="com.caoj.stuspringbootdemo.domain.TestGenerator2" >
+    <id column="ssss" property="ssss" jdbcType="INTEGER" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from new
+    where ssss = #{ssss,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.caoj.stuspringbootdemo.domain.TestGenerator2" >
+    insert into new (ssss)
+    values (#{ssss,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.caoj.stuspringbootdemo.domain.TestGenerator2" >
+    insert into new
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ssss != null" >
+        ssss,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ssss != null" >
+        #{ssss,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>
